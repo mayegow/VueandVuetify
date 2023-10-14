@@ -9,6 +9,7 @@
     </div>
 </template>
 <script>
+import {mapGetters, mapActions} from 'vuex'
 import appImage from '../components/Image.vue'
 
 export default {
@@ -18,25 +19,17 @@ export default {
     },
     data(){
         return{
-            images: []
+            
         }
     },
     created(){
         this.loadImages()
     },
     methods:{
-        async loadImages(){
-            try{
-
-                const res = await fetch("https://picsum.photos/v2/list?page=2&limit=100")
-                const data = await res.json()
-                console.log(data)
-                this.images = data
-            }
-            catch (err){
-                console.log(err)
-            }
-        }
+        ...mapActions('images',['loadImages'])
+    },
+    computed:{
+        ...mapGetters('images',['images'])
     }
     
 }
