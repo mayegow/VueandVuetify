@@ -6,6 +6,13 @@ This project contains some good practices to VueJs
 
 # How to run 
 
+    $ git clone <this_repo>
+    $ cd vueandvuetify/proyecto
     $ npm install
     $ npm run serve
-    
+
+![]()
+![]()
+![]()
+![]()
+![]()
